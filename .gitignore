@@ -1,7 +1,6 @@
 # Private machine configuration and credentials
 .env
 .env.*
-!.env.example
 *.pem
 *.key
 

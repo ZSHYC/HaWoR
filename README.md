@@ -29,7 +29,7 @@ cd HaWoR
 3. 激活环境，在仓库根目录运行示例：
 
 ```bash
-source scripts/server/activate.sh
+conda activate hawor
 
 # 按可用资源选择 GPU 编号。
 CUDA_VISIBLE_DEVICES=0 python demo.py \
@@ -56,6 +56,7 @@ example/video_0/vis_cam_0_120/aitviewer/video.mp4
 | [模型准备](docs/MODELS.md) | 下载来源、目录结构、SHA-256 与 MANO |
 | [验证记录](docs/VALIDATION.md) | 已测试的范围、结果及已知限制 |
 | [上游说明](docs/UPSTREAM.md) | 原始项目介绍、HOT3D / DexYCB 评测入口 |
+| `python scripts/server/check_conda.py` | 检查真实 Conda 激活、退出、切换和变量恢复 |
 | `python scripts/server/check_headless.py` | 无需 MANO / 权重，检查 world 与 cam 视频实际渲染和解码 |
 
 ## 仓库结构
@@ -64,9 +65,9 @@ example/video_0/vis_cam_0_120/aitviewer/video.mp4
 demo.py                    官方视频推理入口，新增 --headless
 environment.yml            Conda 环境定义
 requirements.txt           固定关键 Python 依赖
-environment/               Linux Conda 与 Python 完整版本快照
+environment/               Conda 激活钩子与完整版本快照
 docs/                      安装、模型和验证文档
-scripts/server/            环境激活与离屏渲染检查
+scripts/server/            Conda 生命周期与离屏渲染检查
 lib/、hawor/、infiller/     上游模型、推理、运动补全和渲染代码
 thirdparty/                DROID-SLAM、Metric3D 及其依赖
 hot3d/、scripts/scripts_eval/  上游数据处理与评测代码

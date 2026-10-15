@@ -18,6 +18,8 @@ Conda 与 Python 快照在 [environment/](../environment/)。快照来自通过�
 
 ## 已完成检查
 
+- `conda activate hawor`：可按名字发现环境；Bash 初始化后在新登录终端可直接使用。
+- `python scripts/server/check_conda.py`：真实 Conda 激活、重复激活、切换至 base、双向叠加环境均通过；退出后恢复原先未设置、空值、有值及未导出的变量。
 - `python -m pip check`：依赖声明检查通过。
 - 私有 CUDA 工具链：共享 CUDA 测试程序编译、链接与 GPU 执行通过，使用环境内 CUDA 11.7 库。
 - torch-scatter CUDA、PyTorch3D CUDA 光栅化、DROID CUDA 相关性计算、lietorch SE3 CUDA exp/log 均通过实际运算。
