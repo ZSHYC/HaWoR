@@ -1,0 +1,42 @@
+{
+  "input": "example/segment_018.mp4",
+  "physical_cuda_device": "2",
+  "started_utc": "2026-10-15T10:01:21.064967+00:00",
+  "cache_existed_before": false,
+  "runs": [
+    {
+      "mode": "world",
+      "command": [
+        "python",
+        "demo.py",
+        "--video_path",
+        "example/segment_018.mp4",
+        "--vis_mode",
+        "world",
+        "--headless"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 84.91057299263775,
+      "log": "artifacts/segment_018/run_world.log",
+      "timing": "artifacts/segment_018/run_world.time.txt",
+      "reuse_note": "fresh input, no prior inference cache"
+    },
+    {
+      "mode": "cam",
+      "command": [
+        "python",
+        "demo.py",
+        "--video_path",
+        "example/segment_018.mp4",
+        "--vis_mode",
+        "cam",
+        "--headless"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 24.080762387253344,
+      "log": "artifacts/segment_018/run_cam.log",
+      "timing": "artifacts/segment_018/run_cam.time.txt",
+      "reuse_note": "reuses same-input inference cache"
+    }
+  ]
+}

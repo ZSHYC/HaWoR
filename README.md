@@ -17,6 +17,14 @@
 
 已在 **Ubuntu 22.04 / NVIDIA A800 80 GB / Python 3.10 / PyTorch 1.13.0+cu117 / CUDA 11.7** 上跑通官方 `example/video_0.mp4`。其他系统、显卡与版本组合需要另行验证。
 
+## 复现结果
+
+已完成3段仓库示例和1段Open-AoE外部视频的推理，提供三视角对比、手部局部视频、关键帧、网格三视图和诊断统计。外部输入也存在手掌偏大、指尖贴合不足；这些结果属于定性复现，没有真值精度评测。
+
+![四段视频的相机叠加预览](assets/results/preview.gif)
+
+[完整复现报告](docs/RESULTS.md) · [完整视频与离线交互报告](https://github.com/ZSHYC/HaWoR/releases/tag/reproduction-2026-10-15) · [实验记录JSON](assets/results/experiments.json)
+
 ## 开始使用
 
 ```bash

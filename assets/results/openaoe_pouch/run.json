@@ -1,0 +1,56 @@
+{
+  "input": "external_inputs/openaoe_pouch.mp4",
+  "input_sha256": "a9e659c21939e817ab38d0a123a78041d46510f825f2764df049ce5348b657f4",
+  "physical_cuda_device": "4",
+  "started_utc": "2026-10-15T10:03:48.912059+00:00",
+  "cache_existed_before": false,
+  "source": "https://huggingface.co/datasets/inclusionAI/OpenAoE-2000h",
+  "revision": "3fd28613804145b6a0ec7a81ac3dd40918158991",
+  "sample": "aoe_20260201_192308_p000",
+  "clip_seconds": [
+    0,
+    6
+  ],
+  "focal_pixels": 600,
+  "focal_note": "Same scalar-focal baseline as the official examples. Supplied external fx/fy differ; this qualitative run does not claim calibrated accuracy.",
+  "runs": [
+    {
+      "mode": "world",
+      "command": [
+        "python",
+        "demo.py",
+        "--video_path",
+        "external_inputs/openaoe_pouch.mp4",
+        "--vis_mode",
+        "world",
+        "--img_focal",
+        "600",
+        "--headless"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 119.96911757998168,
+      "log": "artifacts/openaoe_pouch/run_world.log",
+      "timing": "artifacts/openaoe_pouch/run_world.time.txt",
+      "reuse_note": "fresh input, no prior inference cache"
+    },
+    {
+      "mode": "cam",
+      "command": [
+        "python",
+        "demo.py",
+        "--video_path",
+        "external_inputs/openaoe_pouch.mp4",
+        "--vis_mode",
+        "cam",
+        "--img_focal",
+        "600",
+        "--headless"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 27.447934211231768,
+      "log": "artifacts/openaoe_pouch/run_cam.log",
+      "timing": "artifacts/openaoe_pouch/run_cam.time.txt",
+      "reuse_note": "reuses same-input inference cache"
+    }
+  ]
+}

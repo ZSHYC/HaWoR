@@ -1,0 +1,1275 @@
+{
+  "schema_version": 1,
+  "sequence": "external_inputs/openaoe_pouch",
+  "frame_count": 180,
+  "side_order": [
+    "left",
+    "right"
+  ],
+  "frame_indexing": "0-based indices of extracted images; not source video timestamps",
+  "extracted_jpg_count": 180,
+  "first_image_size_width_height": [
+    1920,
+    1080
+  ],
+  "arrays": {
+    "pred_trans": {
+      "shape": [
+        2,
+        180,
+        3
+      ],
+      "dtype": "float32",
+      "elements": 1080,
+      "finite": 1080,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 1080,
+        "min": -0.11332108825445175,
+        "median": 0.11528593301773071,
+        "mean": 0.09728090069342957,
+        "p95": 0.21651800125837325,
+        "max": 0.2713252604007721
+      }
+    },
+    "pred_rot": {
+      "shape": [
+        2,
+        180,
+        3
+      ],
+      "dtype": "float32",
+      "elements": 1080,
+      "finite": 1080,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 1080,
+        "min": -2.67752742767334,
+        "median": 0.0870305635035038,
+        "mean": -0.11703915018760772,
+        "p95": 2.301205289363861,
+        "max": 2.609217643737793
+      }
+    },
+    "pred_hand_pose": {
+      "shape": [
+        2,
+        180,
+        45
+      ],
+      "dtype": "float32",
+      "elements": 16200,
+      "finite": 16200,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 16200,
+        "min": -1.2902535200119019,
+        "median": -0.02579803392291069,
+        "mean": 0.036016276062036306,
+        "p95": 0.9557826757431029,
+        "max": 1.6573675870895386
+      }
+    },
+    "pred_betas": {
+      "shape": [
+        2,
+        180,
+        10
+      ],
+      "dtype": "float32",
+      "elements": 3600,
+      "finite": 3600,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 3600,
+        "min": -3.9837870597839355,
+        "median": -0.861399918794632,
+        "mean": -0.7296730893684759,
+        "p95": 1.336410367488861,
+        "max": 1.9245140552520752
+      }
+    },
+    "pred_valid": {
+      "shape": [
+        2,
+        180
+      ],
+      "dtype": "bool",
+      "elements": 360,
+      "finite": 360,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 360,
+        "min": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "max": 1.0
+      }
+    }
+  },
+  "final_validity": {
+    "left": {
+      "frames": 180,
+      "present_frames": 180,
+      "fraction": 1.0,
+      "present_ranges_inclusive": [
+        [
+          0,
+          179
+        ]
+      ],
+      "absent_ranges_inclusive": []
+    },
+    "right": {
+      "frames": 180,
+      "present_frames": 180,
+      "fraction": 1.0,
+      "present_ranges_inclusive": [
+        [
+          0,
+          179
+        ]
+      ],
+      "absent_ranges_inclusive": []
+    }
+  },
+  "detections": {
+    "track_summaries": [
+      {
+        "track_id": "1.0",
+        "entries": 180,
+        "detected_entries": 180,
+        "first_frame": 0,
+        "last_frame": 179,
+        "duplicate_frame_entries": 0,
+        "majority_assigned_side": "right",
+        "raw_label_left_count": 0,
+        "raw_label_right_count": 180,
+        "raw_label_vs_track_majority_disagreements": 0
+      },
+      {
+        "track_id": "2.0",
+        "entries": 180,
+        "detected_entries": 180,
+        "first_frame": 0,
+        "last_frame": 179,
+        "duplicate_frame_entries": 0,
+        "majority_assigned_side": "left",
+        "raw_label_left_count": 180,
+        "raw_label_right_count": 0,
+        "raw_label_vs_track_majority_disagreements": 0
+      }
+    ],
+    "boxes": {
+      "detected_entries": 360,
+      "schema": "[x1,y1,x2,y2,detector_score] in source image pixels",
+      "array": {
+        "shape": [
+          360,
+          5
+        ],
+        "dtype": "float64",
+        "elements": 1800,
+        "finite": 1800,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 1800,
+          "min": 0.0,
+          "median": 597.3353576660156,
+          "mean": 612.7926054057148,
+          "p95": 1659.1179931640625,
+          "max": 1807.5494384765625
+        }
+      },
+      "score": {
+        "count": 360,
+        "min": 0.50830078125,
+        "median": 0.7265625,
+        "mean": 0.7239529079861111,
+        "p95": 0.8062744140625,
+        "max": 0.8564453125
+      },
+      "negative_or_zero_width_or_height": 0,
+      "score_outside_0_1": 0,
+      "boxes_outside_image_extent": 0,
+      "model_boxes_npy_shape": [
+        0
+      ]
+    },
+    "raw_label_support": {
+      "left": {
+        "frames": 180,
+        "present_frames": 180,
+        "fraction": 1.0,
+        "present_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ],
+        "absent_ranges_inclusive": []
+      },
+      "right": {
+        "frames": 180,
+        "present_frames": 180,
+        "fraction": 1.0,
+        "present_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ],
+        "absent_ranges_inclusive": []
+      }
+    },
+    "track_majority_support": {
+      "left": {
+        "frames": 180,
+        "present_frames": 180,
+        "fraction": 1.0,
+        "present_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ],
+        "absent_ranges_inclusive": []
+      },
+      "right": {
+        "frames": 180,
+        "present_frames": 180,
+        "fraction": 1.0,
+        "present_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ],
+        "absent_ranges_inclusive": []
+      }
+    },
+    "any_raw_detection": {
+      "frames": 180,
+      "present_frames": 180,
+      "fraction": 1.0,
+      "present_ranges_inclusive": [
+        [
+          0,
+          179
+        ]
+      ],
+      "absent_ranges_inclusive": []
+    },
+    "both_raw_labels_present": {
+      "frames": 180,
+      "present_frames": 180,
+      "fraction": 1.0,
+      "present_ranges_inclusive": [
+        [
+          0,
+          179
+        ]
+      ],
+      "absent_ranges_inclusive": []
+    },
+    "out_of_range_frame_entries": []
+  },
+  "camera_stage": {
+    "chunks": [
+      {
+        "path": "external_inputs/openaoe_pouch/cam_space/0/0_179.json",
+        "hand": "left",
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179
+        ],
+        "arrays": {
+          "init_root_orient": {
+            "shape": [
+              1,
+              180,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 1620,
+            "finite": 1620,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 1620,
+              "min": -0.9343647956848145,
+              "median": -0.3556966185569763,
+              "mean": -0.20911108092577368,
+              "p95": 0.5903543859720229,
+              "max": 0.7549265027046204
+            }
+          },
+          "init_hand_pose": {
+            "shape": [
+              1,
+              180,
+              15,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 24300,
+            "finite": 24300,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 24300,
+              "min": -0.9686805009841919,
+              "median": 0.17977295070886612,
+              "mean": 0.30195853794510996,
+              "p95": 0.9893790960311889,
+              "max": 0.9999828338623047
+            }
+          },
+          "init_trans": {
+            "shape": [
+              1,
+              180,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 540,
+            "finite": 540,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 540,
+              "min": -0.06197591871023178,
+              "median": 0.04347231052815914,
+              "mean": 0.07646449253445974,
+              "p95": 0.2194521814584732,
+              "max": 0.24343326687812805
+            }
+          },
+          "init_betas": {
+            "shape": [
+              1,
+              180,
+              10
+            ],
+            "dtype": "float64",
+            "elements": 1800,
+            "finite": 1800,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 1800,
+              "min": -3.0540220737457275,
+              "median": -0.9948220551013947,
+              "mean": -0.5015872355136607,
+              "p95": 1.4281548261642456,
+              "max": 1.9245140552520752
+            }
+          }
+        }
+      },
+      {
+        "path": "external_inputs/openaoe_pouch/cam_space/1/0_179.json",
+        "hand": "right",
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          179
+        ],
+        "arrays": {
+          "init_root_orient": {
+            "shape": [
+              1,
+              180,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 1620,
+            "finite": 1620,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 1620,
+              "min": -0.9675710201263428,
+              "median": -0.168911911547184,
+              "mean": -0.02439660472266468,
+              "p95": 0.8548917412757874,
+              "max": 0.9435537457466125
+            }
+          },
+          "init_hand_pose": {
+            "shape": [
+              1,
+              180,
+              15,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 24300,
+            "finite": 24300,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 24300,
+              "min": -0.9995607137680054,
+              "median": 0.1863156035542488,
+              "mean": 0.22638969368634768,
+              "p95": 0.9713565707206726,
+              "max": 0.9999748468399048
+            }
+          },
+          "init_trans": {
+            "shape": [
+              1,
+              180,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 540,
+            "finite": 540,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 540,
+              "min": -0.1393006145954132,
+              "median": 0.08705870062112808,
+              "mean": 0.08385581575092618,
+              "p95": 0.21428581178188322,
+              "max": 0.28511953353881836
+            }
+          },
+          "init_betas": {
+            "shape": [
+              1,
+              180,
+              10
+            ],
+            "dtype": "float64",
+            "elements": 1800,
+            "finite": 1800,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 1800,
+              "min": -3.9837870597839355,
+              "median": -0.7629469037055969,
+              "mean": -0.957758943223291,
+              "p95": 1.2991014122962952,
+              "max": 1.59501051902771
+            }
+          }
+        }
+      }
+    ],
+    "coverage": {
+      "left": {
+        "frames": 180,
+        "present_frames": 180,
+        "fraction": 1.0,
+        "present_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ],
+        "absent_ranges_inclusive": []
+      },
+      "right": {
+        "frames": 180,
+        "present_frames": 180,
+        "fraction": 1.0,
+        "present_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ],
+        "absent_ranges_inclusive": []
+      }
+    }
+  },
+  "stage_comparison": {
+    "left": {
+      "final_valid_without_camera_stage": {
+        "frames": 180,
+        "present_frames": 0,
+        "fraction": 0.0,
+        "present_ranges_inclusive": [],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ]
+      },
+      "camera_stage_but_final_invalid": {
+        "frames": 180,
+        "present_frames": 0,
+        "fraction": 0.0,
+        "present_ranges_inclusive": [],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ]
+      }
+    },
+    "right": {
+      "final_valid_without_camera_stage": {
+        "frames": 180,
+        "present_frames": 0,
+        "fraction": 0.0,
+        "present_ranges_inclusive": [],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ]
+      },
+      "camera_stage_but_final_invalid": {
+        "frames": 180,
+        "present_frames": 0,
+        "fraction": 0.0,
+        "present_ranges_inclusive": [],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            179
+          ]
+        ]
+      }
+    }
+  },
+  "model_masks": {
+    "available": true,
+    "path": "external_inputs/openaoe_pouch/tracks_0_180/model_masks.npy",
+    "shape": [
+      180,
+      1080,
+      1920
+    ],
+    "dtype": "bool",
+    "definition": "nonzero rendered union-mask pixels / (image height * image width), per frame",
+    "area_fraction": {
+      "count": 180,
+      "min": 0.05681520061728395,
+      "median": 0.10126953125,
+      "mean": 0.10257784904406723,
+      "p95": 0.1382689766589506,
+      "max": 0.14532310956790123
+    }
+  },
+  "slam": {
+    "available": true,
+    "path": "external_inputs/openaoe_pouch/SLAM/hawor_slam_w_scale_0_180.npz",
+    "arrays": {
+      "tstamp": {
+        "shape": [
+          8
+        ],
+        "dtype": "int32",
+        "elements": 8,
+        "finite": 8,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 8,
+          "min": 0.0,
+          "median": 48.5,
+          "mean": 67.125,
+          "p95": 150.6,
+          "max": 159.0
+        }
+      },
+      "disps": {
+        "shape": [
+          8,
+          328,
+          584
+        ],
+        "dtype": "float32",
+        "elements": 1532416,
+        "finite": 1532416,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 1532416,
+          "min": 1.5295661341951927e-06,
+          "median": 1.2626925110816956,
+          "mean": 1.302395315553093,
+          "p95": 2.0805176496505737,
+          "max": 5.472226142883301
+        }
+      },
+      "traj": {
+        "shape": [
+          180,
+          7
+        ],
+        "dtype": "float32",
+        "elements": 1260,
+        "finite": 1260,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 1260,
+          "min": -0.02704240195453167,
+          "median": 0.01589904259890318,
+          "mean": 0.16415904390913227,
+          "p95": 0.9968550086021424,
+          "max": 1.0
+        }
+      },
+      "img_focal": {
+        "shape": [],
+        "dtype": "float64",
+        "elements": 1,
+        "finite": 1,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 1,
+          "min": 600.0,
+          "median": 600.0,
+          "mean": 600.0,
+          "p95": 600.0,
+          "max": 600.0
+        }
+      },
+      "img_center": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "elements": 2,
+        "finite": 2,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 2,
+          "min": 540.0,
+          "median": 750.0,
+          "mean": 750.0,
+          "p95": 939.0,
+          "max": 960.0
+        }
+      },
+      "scale": {
+        "shape": [],
+        "dtype": "float64",
+        "elements": 1,
+        "finite": 1,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 1,
+          "min": 0.5789834260940552,
+          "median": 0.5789834260940552,
+          "mean": 0.5789834260940552,
+          "p95": 0.5789834260940552,
+          "max": 0.5789834260940552
+        }
+      }
+    },
+    "coordinate_definition": "traj[:, :3] * scale (same camera-to-world translation used by load_slam_cam)",
+    "units": "stored units; physical scale not independently validated",
+    "quaternion_norm": {
+      "count": 180,
+      "min": 0.9999999403953552,
+      "median": 1.0,
+      "mean": 0.9999999993377262,
+      "p95": 1.0,
+      "max": 1.0000001192092896
+    },
+    "scaled_camera_translation": {
+      "shape": [
+        180,
+        3
+      ],
+      "dtype": "float64",
+      "elements": 540,
+      "finite": 540,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 540,
+        "min": -0.01565710253344732,
+        "median": 0.0006638941090405734,
+        "mean": 0.009870163593743457,
+        "p95": 0.05923018771907989,
+        "max": 0.07398632726937748
+      }
+    },
+    "adjacent_displacement": {
+      "count": 179,
+      "min": 4.054414061734522e-05,
+      "median": 0.0009463972342069475,
+      "mean": 0.00121704508515227,
+      "p95": 0.003260986575587638,
+      "max": 0.006386689293310247
+    }
+  },
+  "world_translation": {
+    "left": {
+      "usable_translation_frames": 180,
+      "axis_min": [
+        0.04073721170425415,
+        -0.05536632984876633,
+        0.16469307243824005
+      ],
+      "axis_max": [
+        0.12282856553792953,
+        -0.017229566350579262,
+        0.2361440658569336
+      ],
+      "axis_range": [
+        0.08209135383367538,
+        0.038136765360832214,
+        0.07145099341869354
+      ],
+      "adjacent_displacement": {
+        "count": 179,
+        "min": 0.0002177398144881844,
+        "median": 0.004320777123391593,
+        "mean": 0.0059092388041143895,
+        "p95": 0.01452177655297851,
+        "max": 0.03002821588607761
+      },
+      "sum_adjacent_displacement": 1.0577537459364756,
+      "zero_translation_valid_frames": []
+    },
+    "right": {
+      "usable_translation_frames": 180,
+      "axis_min": [
+        0.061787188053131104,
+        -0.11332108825445175,
+        0.13830041885375977
+      ],
+      "axis_max": [
+        0.18652032315731049,
+        0.03478047251701355,
+        0.2713252604007721
+      ],
+      "axis_range": [
+        0.12473313510417938,
+        0.1481015682220459,
+        0.13302484154701233
+      ],
+      "adjacent_displacement": {
+        "count": 179,
+        "min": 0.0005633452257661232,
+        "median": 0.005627189176137645,
+        "mean": 0.00717296788295879,
+        "p95": 0.016189548235586302,
+        "max": 0.049293243086308974
+      },
+      "sum_adjacent_displacement": 1.2839612510496234,
+      "zero_translation_valid_frames": []
+    }
+  },
+  "camera_translation": {
+    "left": {
+      "usable_translation_frames": 180,
+      "axis_min": [
+        0.01656503975391388,
+        -0.06197591871023178,
+        0.16263331472873688
+      ],
+      "axis_max": [
+        0.0737684816122055,
+        -0.002350110560655594,
+        0.24343326687812805
+      ],
+      "axis_range": [
+        0.057203441858291626,
+        0.05962580814957619,
+        0.08079995214939117
+      ],
+      "adjacent_displacement": {
+        "count": 179,
+        "min": 0.0003137172845368025,
+        "median": 0.0044617826737073365,
+        "mean": 0.005940760640063559,
+        "p95": 0.014792212630007847,
+        "max": 0.028577710515580543
+      },
+      "sum_adjacent_displacement": 1.063396154571377,
+      "zero_translation_valid_frames": []
+    },
+    "right": {
+      "usable_translation_frames": 180,
+      "axis_min": [
+        0.05973370000720024,
+        -0.1393006145954132,
+        0.15243804454803467
+      ],
+      "axis_max": [
+        0.13789139688014984,
+        0.007030054926872253,
+        0.28511953353881836
+      ],
+      "axis_range": [
+        0.0781576968729496,
+        0.14633066952228546,
+        0.1326814889907837
+      ],
+      "adjacent_displacement": {
+        "count": 179,
+        "min": 0.00019932806439953543,
+        "median": 0.005611924881749971,
+        "mean": 0.007067297121376819,
+        "p95": 0.016671600973395068,
+        "max": 0.04902328923496728
+      },
+      "sum_adjacent_displacement": 1.265046184726451,
+      "zero_translation_valid_frames": []
+    }
+  },
+  "definitions": {
+    "validity": "Final pred_valid from HaWoR; can be set True by infiller, not detector reliability or correctness",
+    "raw_label_support": "At least one model_tracks entry with det=True and raw det_handedness >0 (right) or ==0 (left), per frame",
+    "track_majority_support": "Assign each track left if mean of its det=True handedness labels <0.5, else right; union det=True frames by assigned side (same rule as HaWoR)",
+    "camera_stage_support": "Frames present in camera-space JSON matched to current frame_chunks_all when available; can include interpolated detection boxes",
+    "final_valid_without_camera_stage": "Final-valid frames absent from camera-stage cache; consistent with infill availability, not ground-truth visibility",
+    "translation": "Stored MANO model translation parameter, not wrist/joint positions; world uses cam2world_convert offset convention",
+    "adjacent_displacement": "L2 norm(trans[t]-trans[t-1]) only if both adjacent frames are final-valid and have finite xyz; no bridging gaps",
+    "sum_adjacent_displacement": "Sum of eligible consecutive-frame displacements; does not bridge gaps; stored units",
+    "axis_bounds": "Min/max/range over usable final-valid finite translation frames; invalid zero placeholders excluded",
+    "array_bounds": "Array numeric summaries include placeholders; finite value min/max are diagnostic, not anatomical limits",
+    "detector_score": "Cached detector score; maximum for a raw side label within a frame; not calibrated confidence",
+    "percentile": "p95 computed by numpy.quantile with default linear interpolation"
+  },
+  "limitations": [
+    "No ground truth or benchmark annotations; no reconstruction accuracy, MPJPE, PVE, reprojection error, identity accuracy, or visibility accuracy is measured.",
+    "Metrics describe one saved prediction; finite tensors and full validity do not establish correctness.",
+    "Translation axes are stored world/camera coordinates. Units, world orientation and physical scale are not independently validated.",
+    "Consecutive-frame displacement is motion magnitude, not velocity or jitter; frame time is not assumed.",
+    "Rendered model-mask area is model-derived and is not segmentation IoU.",
+    "Raw tracks contain only retained detector/tracker records; they are not every pre-filter detector proposal.",
+    "Model weights, MANO assets and raw meshes are not loaded or exported."
+  ],
+  "warnings": [
+    "model_boxes.npy is empty; raw detections reconstructed from model_tracks.npy instead"
+  ],
+  "provenance": {
+    "world_serialization": "joblib list despite .pth suffix",
+    "inputs": [
+      {
+        "path": "external_inputs/openaoe_pouch/world_space_res.pth",
+        "bytes": 89738,
+        "sha256": "1e046b5e253473ed1d4602d2fda5f29c5e1e82758de2ecd2f1bcf24613941c09"
+      },
+      {
+        "path": "external_inputs/openaoe_pouch/tracks_0_180/model_tracks.npy",
+        "bytes": 54865,
+        "sha256": "16778d13b13a9aec65f96c60c5a645022a5314e74e68708585952eee76725050"
+      },
+      {
+        "path": "external_inputs/openaoe_pouch/tracks_0_180/frame_chunks_all.npy",
+        "bytes": 3235,
+        "sha256": "cb95f997039cb5c3f1cbe1704097a185f2f4c109a316c81c486e0ce8ea6ce373"
+      },
+      {
+        "path": "external_inputs/openaoe_pouch/cam_space/0/0_179.json",
+        "bytes": 910004,
+        "sha256": "2c101fb06e72b263c087e3d9d2dd0986dbe25494c1dcb9218581207c735ca41a"
+      },
+      {
+        "path": "external_inputs/openaoe_pouch/cam_space/1/0_179.json",
+        "bytes": 908099,
+        "sha256": "4c111f4ad2ea3c2d37aefc87632f635bccd942ca87eabb7ee8dd743f734b35e8"
+      },
+      {
+        "path": "external_inputs/openaoe_pouch/SLAM/hawor_slam_w_scale_0_180.npz",
+        "bytes": 6136260,
+        "sha256": "8d4db8d4afd32e0edf6540c79e43e99dcc59c8c24a1c2dd740c836d6519bb7b2"
+      }
+    ],
+    "script": {
+      "path": "scripts/results/diagnostics.py",
+      "bytes": 28635,
+      "sha256": "90c6bf578387caa0b95e49614624d738401e5b804c3f0cfc274dd6bd67c3e55f"
+    },
+    "runtime": {
+      "python": "3.10.22",
+      "torch": "1.13.0+cu117",
+      "numpy": "1.26.4",
+      "matplotlib": "3.7.5",
+      "joblib": "1.4.2"
+    }
+  },
+  "artifacts": [
+    "01_support_and_detection.png",
+    "02_translation_components.png",
+    "03_world_trajectory_and_motion.png",
+    "summary.json",
+    "framewise.json"
+  ]
+}

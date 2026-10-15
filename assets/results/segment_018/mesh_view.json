@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "sequence": "example/segment_018",
+  "frame_index": 59,
+  "frame_count": 120,
+  "frame_index_definition": "0-based extracted-image index, not source video timestamp",
+  "frame_selection": {
+    "criterion": "both raw detector sides present and both final-valid",
+    "midpoint_frame_index": 59.5,
+    "eligible_frame_count": 62,
+    "tie_break": "earlier frame"
+  },
+  "hands": {
+    "left": {
+      "rendered": true,
+      "vertex_count": 778,
+      "face_count": 1552,
+      "finite_vertices": true,
+      "vertex_axis_min": [
+        -0.16334524750709534,
+        0.14749866724014282,
+        0.19952471554279327
+      ],
+      "vertex_axis_max": [
+        -0.036525219678878784,
+        0.2816926836967468,
+        0.3567236065864563
+      ],
+      "raw_detector_label_present": true,
+      "final_valid": true,
+      "camera_stage_support": true,
+      "forward_function": "run_mano_left",
+      "color": "#a855f7"
+    },
+    "right": {
+      "rendered": true,
+      "vertex_count": 778,
+      "face_count": 1552,
+      "finite_vertices": true,
+      "vertex_axis_min": [
+        -0.05540848150849342,
+        0.04758468270301819,
+        0.1857432723045349
+      ],
+      "vertex_axis_max": [
+        0.12607483565807343,
+        0.2094973921775818,
+        0.32061895728111267
+      ],
+      "raw_detector_label_present": true,
+      "final_valid": true,
+      "camera_stage_support": true,
+      "forward_function": "run_mano",
+      "color": "#3b82f6"
+    }
+  },
+  "geometry_definition": "Actual run_mano_left/run_mano CPU forward of saved final world trans/angle-axis root/hand pose/betas; same left shapedirs fix and wrist-cap faces as repository helper defaults",
+  "coordinate_definition": "Original saved-world MANO vertices from the parametric forward; no demo rotation, recentering, scaling, smoothing or pose changes. Only plot limits/camera view are fitted.",
+  "units": "stored world units; physical scale not independently validated",
+  "axis_order": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "common_axis_limits": [
+    [
+      -0.18071045249700549,
+      0.14344004064798357
+    ],
+    [
+      0.002563436627387977,
+      0.326713929772377
+    ],
+    [
+      0.10915819287300108,
+      0.4333086860179901
+    ]
+  ],
+  "axis_fit_definition": "Union vertex bounding-box center; all 3 axes half-width 0.56 * largest bounding-box side; equal-axis cube shared by 3 views",
+  "views": [
+    {
+      "elevation_degrees": 20,
+      "azimuth_degrees": -60
+    },
+    {
+      "elevation_degrees": 20,
+      "azimuth_degrees": 60
+    },
+    {
+      "elevation_degrees": 90,
+      "azimuth_degrees": -90
+    }
+  ],
+  "projection": "orthographic",
+  "rendering": "Matplotlib Poly3DCollection, opaque constant side color, thin triangle edges, no shading or lighting; painter-based static display",
+  "limitations": [
+    "No ground truth, no measured reconstruction accuracy or anatomical plausibility evaluation.",
+    "Raw-side detector support does not prove hand identity, visibility, or absence of infill after track-majority reassignment.",
+    "Parametric MANO forward only; this does not rerun learned reconstruction or modify saved inference outputs.",
+    "Matplotlib polygon depth ordering can have occlusion artifacts; geometry is not changed to improve appearance."
+  ],
+  "attribution": null,
+  "cuda_initialized": false,
+  "provenance": {
+    "world_cache": "example/segment_018/world_space_res.pth",
+    "world_cache_sha256": "8a062e632adaa9f9cd15944819049b262479f9b2a6b92d816742b076266b86e0",
+    "script_sha256": "87060e065629b1ddf9eed6b61cc7e0e4d8e90a99685613df9d305148889ccc7b",
+    "process_py_sha256": "3a7a6490c4505c9c773715fd48c8206607536304d46f1cfb5a08fc1dc8de9a5c",
+    "torch": "1.13.0+cu117",
+    "numpy": "1.26.4",
+    "matplotlib": "3.7.5"
+  },
+  "exported": [
+    "04_mesh_views.png",
+    "mesh_view.json"
+  ],
+  "not_exported": "Mesh vertices, triangle arrays, saved pose/shape parameters, MANO assets and learned weights"
+}

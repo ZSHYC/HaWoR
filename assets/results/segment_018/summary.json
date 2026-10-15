@@ -1,0 +1,1553 @@
+{
+  "schema_version": 1,
+  "sequence": "example/segment_018",
+  "frame_count": 120,
+  "side_order": [
+    "left",
+    "right"
+  ],
+  "frame_indexing": "0-based indices of extracted images; not source video timestamps",
+  "extracted_jpg_count": 120,
+  "first_image_size_width_height": [
+    1920,
+    1080
+  ],
+  "arrays": {
+    "pred_trans": {
+      "shape": [
+        2,
+        120,
+        3
+      ],
+      "dtype": "float32",
+      "elements": 720,
+      "finite": 720,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 720,
+        "min": -0.8207288384437561,
+        "median": 0.1566503643989563,
+        "mean": 0.09856014539642881,
+        "p95": 0.30665829330682753,
+        "max": 0.3779469430446625
+      }
+    },
+    "pred_rot": {
+      "shape": [
+        2,
+        120,
+        3
+      ],
+      "dtype": "float32",
+      "elements": 720,
+      "finite": 720,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 720,
+        "min": -2.6519839763641357,
+        "median": -0.2780439108610153,
+        "mean": -0.15278865567977643,
+        "p95": 2.0354292988777147,
+        "max": 2.6813294887542725
+      }
+    },
+    "pred_hand_pose": {
+      "shape": [
+        2,
+        120,
+        45
+      ],
+      "dtype": "float32",
+      "elements": 10800,
+      "finite": 10800,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 10800,
+        "min": -1.4338933229446411,
+        "median": -0.030465146526694298,
+        "mean": 0.011085178809159213,
+        "p95": 0.8180516004562374,
+        "max": 1.6275043487548828
+      }
+    },
+    "pred_betas": {
+      "shape": [
+        2,
+        120,
+        10
+      ],
+      "dtype": "float32",
+      "elements": 2400,
+      "finite": 2400,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 2400,
+        "min": -3.9770376682281494,
+        "median": -0.5154297947883606,
+        "mean": -0.6209177299930404,
+        "p95": 1.4035611510276793,
+        "max": 1.8961341381072998
+      }
+    },
+    "pred_valid": {
+      "shape": [
+        2,
+        120
+      ],
+      "dtype": "bool",
+      "elements": 240,
+      "finite": 240,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 240,
+        "min": 1.0,
+        "median": 1.0,
+        "mean": 1.0,
+        "p95": 1.0,
+        "max": 1.0
+      }
+    }
+  },
+  "final_validity": {
+    "left": {
+      "frames": 120,
+      "present_frames": 120,
+      "fraction": 1.0,
+      "present_ranges_inclusive": [
+        [
+          0,
+          119
+        ]
+      ],
+      "absent_ranges_inclusive": []
+    },
+    "right": {
+      "frames": 120,
+      "present_frames": 120,
+      "fraction": 1.0,
+      "present_ranges_inclusive": [
+        [
+          0,
+          119
+        ]
+      ],
+      "absent_ranges_inclusive": []
+    }
+  },
+  "detections": {
+    "track_summaries": [
+      {
+        "track_id": "1.0",
+        "entries": 32,
+        "detected_entries": 32,
+        "first_frame": 0,
+        "last_frame": 45,
+        "duplicate_frame_entries": 0,
+        "majority_assigned_side": "right",
+        "raw_label_left_count": 2,
+        "raw_label_right_count": 30,
+        "raw_label_vs_track_majority_disagreements": 2
+      },
+      {
+        "track_id": "10000",
+        "entries": 6,
+        "detected_entries": 6,
+        "first_frame": 8,
+        "last_frame": 51,
+        "duplicate_frame_entries": 0,
+        "majority_assigned_side": "right",
+        "raw_label_left_count": 0,
+        "raw_label_right_count": 6,
+        "raw_label_vs_track_majority_disagreements": 0
+      },
+      {
+        "track_id": "4.0",
+        "entries": 68,
+        "detected_entries": 68,
+        "first_frame": 52,
+        "last_frame": 119,
+        "duplicate_frame_entries": 0,
+        "majority_assigned_side": "right",
+        "raw_label_left_count": 0,
+        "raw_label_right_count": 68,
+        "raw_label_vs_track_majority_disagreements": 0
+      },
+      {
+        "track_id": "5.0",
+        "entries": 62,
+        "detected_entries": 62,
+        "first_frame": 58,
+        "last_frame": 119,
+        "duplicate_frame_entries": 0,
+        "majority_assigned_side": "left",
+        "raw_label_left_count": 62,
+        "raw_label_right_count": 0,
+        "raw_label_vs_track_majority_disagreements": 0
+      }
+    ],
+    "boxes": {
+      "detected_entries": 168,
+      "schema": "[x1,y1,x2,y2,detector_score] in source image pixels",
+      "array": {
+        "shape": [
+          168,
+          5
+        ],
+        "dtype": "float64",
+        "elements": 840,
+        "finite": 840,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 840,
+          "min": 0.0,
+          "median": 866.1307678222656,
+          "mean": 759.0293830576397,
+          "p95": 1473.6359069824216,
+          "max": 1920.0
+        }
+      },
+      "score": {
+        "count": 168,
+        "min": 0.2120361328125,
+        "median": 0.793212890625,
+        "mean": 0.7490881057012648,
+        "p95": 0.84404296875,
+        "max": 0.88525390625
+      },
+      "negative_or_zero_width_or_height": 0,
+      "score_outside_0_1": 0,
+      "boxes_outside_image_extent": 0,
+      "model_boxes_npy_shape": [
+        0
+      ]
+    },
+    "raw_label_support": {
+      "left": {
+        "frames": 120,
+        "present_frames": 64,
+        "fraction": 0.5333333333333333,
+        "present_ranges_inclusive": [
+          [
+            5,
+            6
+          ],
+          [
+            58,
+            119
+          ]
+        ],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            4
+          ],
+          [
+            7,
+            57
+          ]
+        ]
+      },
+      "right": {
+        "frames": 120,
+        "present_frames": 104,
+        "fraction": 0.8666666666666667,
+        "present_ranges_inclusive": [
+          [
+            0,
+            4
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            21,
+            47
+          ],
+          [
+            50,
+            119
+          ]
+        ],
+        "absent_ranges_inclusive": [
+          [
+            5,
+            7
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            48,
+            49
+          ]
+        ]
+      }
+    },
+    "track_majority_support": {
+      "left": {
+        "frames": 120,
+        "present_frames": 62,
+        "fraction": 0.5166666666666667,
+        "present_ranges_inclusive": [
+          [
+            58,
+            119
+          ]
+        ],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            57
+          ]
+        ]
+      },
+      "right": {
+        "frames": 120,
+        "present_frames": 106,
+        "fraction": 0.8833333333333333,
+        "present_ranges_inclusive": [
+          [
+            0,
+            6
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            21,
+            47
+          ],
+          [
+            50,
+            119
+          ]
+        ],
+        "absent_ranges_inclusive": [
+          [
+            7,
+            7
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            48,
+            49
+          ]
+        ]
+      }
+    },
+    "any_raw_detection": {
+      "frames": 120,
+      "present_frames": 106,
+      "fraction": 0.8833333333333333,
+      "present_ranges_inclusive": [
+        [
+          0,
+          6
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          21,
+          47
+        ],
+        [
+          50,
+          119
+        ]
+      ],
+      "absent_ranges_inclusive": [
+        [
+          7,
+          7
+        ],
+        [
+          10,
+          20
+        ],
+        [
+          48,
+          49
+        ]
+      ]
+    },
+    "both_raw_labels_present": {
+      "frames": 120,
+      "present_frames": 62,
+      "fraction": 0.5166666666666667,
+      "present_ranges_inclusive": [
+        [
+          58,
+          119
+        ]
+      ],
+      "absent_ranges_inclusive": [
+        [
+          0,
+          57
+        ]
+      ]
+    },
+    "out_of_range_frame_entries": []
+  },
+  "camera_stage": {
+    "chunks": [
+      {
+        "path": "example/segment_018/cam_space/0/58_119.json",
+        "hand": "left",
+        "frames": [
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119
+        ],
+        "arrays": {
+          "init_root_orient": {
+            "shape": [
+              1,
+              62,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 558,
+            "finite": 558,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 558,
+              "min": -0.9928165078163147,
+              "median": -0.2712756395339966,
+              "mean": -0.21099470049730337,
+              "p95": 0.6027855545282361,
+              "max": 0.8502744436264038
+            }
+          },
+          "init_hand_pose": {
+            "shape": [
+              1,
+              62,
+              15,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 8370,
+            "finite": 8370,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 8370,
+              "min": -0.9977285861968994,
+              "median": 0.1777823492884636,
+              "mean": 0.2896786029333067,
+              "p95": 0.9898790746927261,
+              "max": 0.999980628490448
+            }
+          },
+          "init_trans": {
+            "shape": [
+              1,
+              62,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 186,
+            "finite": 186,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 186,
+              "min": 0.0015666373074054718,
+              "median": 0.21739259362220764,
+              "mean": 0.19581589621481715,
+              "p95": 0.3471764400601387,
+              "max": 0.37473809719085693
+            }
+          },
+          "init_betas": {
+            "shape": [
+              1,
+              62,
+              10
+            ],
+            "dtype": "float64",
+            "elements": 620,
+            "finite": 620,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 620,
+              "min": -3.6635828018188477,
+              "median": -0.5503399074077606,
+              "mean": -0.43371281542124285,
+              "p95": 1.4124018907546994,
+              "max": 1.7285540103912354
+            }
+          }
+        }
+      },
+      {
+        "path": "example/segment_018/cam_space/1/0_6.json",
+        "hand": "right",
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "arrays": {
+          "init_root_orient": {
+            "shape": [
+              1,
+              7,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 63,
+            "finite": 63,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 63,
+              "min": -0.8809535503387451,
+              "median": -0.2199360728263855,
+              "mean": -0.0762955222337965,
+              "p95": 0.8392359852790833,
+              "max": 0.9339132308959961
+            }
+          },
+          "init_hand_pose": {
+            "shape": [
+              1,
+              7,
+              15,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 945,
+            "finite": 945,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 945,
+              "min": -0.9119074940681458,
+              "median": 0.21699237823486328,
+              "mean": 0.26782618918943973,
+              "p95": 0.976511263847351,
+              "max": 0.9997394680976868
+            }
+          },
+          "init_trans": {
+            "shape": [
+              1,
+              7,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 21,
+            "finite": 21,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 21,
+              "min": 0.06116275116801262,
+              "median": 0.1145072877407074,
+              "mean": 0.1302428456644217,
+              "p95": 0.20186953246593475,
+              "max": 0.23455817997455597
+            }
+          },
+          "init_betas": {
+            "shape": [
+              1,
+              7,
+              10
+            ],
+            "dtype": "float64",
+            "elements": 70,
+            "finite": 70,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 70,
+              "min": -3.6991403102874756,
+              "median": -1.1175370514392853,
+              "mean": -1.0829761945775578,
+              "p95": 1.4082939743995664,
+              "max": 1.8961341381072998
+            }
+          }
+        }
+      },
+      {
+        "path": "example/segment_018/cam_space/1/21_47.json",
+        "hand": "right",
+        "frames": [
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ],
+        "arrays": {
+          "init_root_orient": {
+            "shape": [
+              1,
+              27,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 243,
+            "finite": 243,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 243,
+              "min": -0.9548865556716919,
+              "median": -0.15915736556053162,
+              "mean": -0.10863524282910696,
+              "p95": 0.9568238973617553,
+              "max": 0.975985586643219
+            }
+          },
+          "init_hand_pose": {
+            "shape": [
+              1,
+              27,
+              15,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 3645,
+            "finite": 3645,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 3645,
+              "min": -0.9127780199050903,
+              "median": 0.19176240265369415,
+              "mean": 0.26298739377879354,
+              "p95": 0.9800851464271545,
+              "max": 0.9998650550842285
+            }
+          },
+          "init_trans": {
+            "shape": [
+              1,
+              27,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 81,
+            "finite": 81,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 81,
+              "min": -0.15649619698524475,
+              "median": 0.10241544991731644,
+              "mean": 0.09722812013861573,
+              "p95": 0.2633644938468933,
+              "max": 0.28043225407600403
+            }
+          },
+          "init_betas": {
+            "shape": [
+              1,
+              27,
+              10
+            ],
+            "dtype": "float64",
+            "elements": 270,
+            "finite": 270,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 270,
+              "min": -2.666416645050049,
+              "median": -0.3271651268005371,
+              "mean": -0.20916172293601212,
+              "p95": 1.4954757332801818,
+              "max": 1.8689913749694824
+            }
+          }
+        }
+      },
+      {
+        "path": "example/segment_018/cam_space/1/50_119.json",
+        "hand": "right",
+        "frames": [
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119
+        ],
+        "arrays": {
+          "init_root_orient": {
+            "shape": [
+              1,
+              70,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 630,
+            "finite": 630,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 630,
+              "min": -0.9897115230560303,
+              "median": -0.03892144188284874,
+              "mean": -0.03170385926015793,
+              "p95": 0.8912859380245208,
+              "max": 0.9646239280700684
+            }
+          },
+          "init_hand_pose": {
+            "shape": [
+              1,
+              70,
+              15,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 9450,
+            "finite": 9450,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 9450,
+              "min": -0.9761847853660583,
+              "median": 0.22581802308559418,
+              "mean": 0.2517659154866339,
+              "p95": 0.975912058353424,
+              "max": 0.9999914169311523
+            }
+          },
+          "init_trans": {
+            "shape": [
+              1,
+              70,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 210,
+            "finite": 210,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 210,
+              "min": -0.12356022000312805,
+              "median": 0.15084446966648102,
+              "mean": 0.13443555042502425,
+              "p95": 0.23166210129857057,
+              "max": 0.27898144721984863
+            }
+          },
+          "init_betas": {
+            "shape": [
+              1,
+              70,
+              10
+            ],
+            "dtype": "float64",
+            "elements": 700,
+            "finite": 700,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 700,
+              "min": -3.5993967056274414,
+              "median": -0.5294672548770905,
+              "mean": -0.5814850252121687,
+              "p95": 1.4176583766937254,
+              "max": 1.7922089099884033
+            }
+          }
+        }
+      },
+      {
+        "path": "example/segment_018/cam_space/1/8_9.json",
+        "hand": "right",
+        "frames": [
+          8,
+          9
+        ],
+        "arrays": {
+          "init_root_orient": {
+            "shape": [
+              1,
+              2,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 18,
+            "finite": 18,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 18,
+              "min": -0.992185115814209,
+              "median": -0.17545136064291,
+              "mean": -0.28862489697833854,
+              "p95": 0.43848103582859027,
+              "max": 0.5196531414985657
+            }
+          },
+          "init_hand_pose": {
+            "shape": [
+              1,
+              2,
+              15,
+              3,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 270,
+            "finite": 270,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 270,
+              "min": -0.9252123236656189,
+              "median": 0.21383792161941528,
+              "mean": 0.26379424350646635,
+              "p95": 0.9819166988134383,
+              "max": 0.9983826279640198
+            }
+          },
+          "init_trans": {
+            "shape": [
+              1,
+              2,
+              3
+            ],
+            "dtype": "float64",
+            "elements": 6,
+            "finite": 6,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 6,
+              "min": -0.10890483111143112,
+              "median": 0.20555248111486435,
+              "mean": 0.1350162165860335,
+              "p95": 0.31667476147413254,
+              "max": 0.3295225501060486
+            }
+          },
+          "init_betas": {
+            "shape": [
+              1,
+              2,
+              10
+            ],
+            "dtype": "float64",
+            "elements": 20,
+            "finite": 20,
+            "nonfinite": 0,
+            "finite_fraction": 1.0,
+            "finite_value_summary": {
+              "count": 20,
+              "min": -3.2661142349243164,
+              "median": -1.0637757778167725,
+              "mean": -0.7487596720457077,
+              "p95": 1.4334643483161928,
+              "max": 1.8673624992370605
+            }
+          }
+        }
+      }
+    ],
+    "coverage": {
+      "left": {
+        "frames": 120,
+        "present_frames": 62,
+        "fraction": 0.5166666666666667,
+        "present_ranges_inclusive": [
+          [
+            58,
+            119
+          ]
+        ],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            57
+          ]
+        ]
+      },
+      "right": {
+        "frames": 120,
+        "present_frames": 106,
+        "fraction": 0.8833333333333333,
+        "present_ranges_inclusive": [
+          [
+            0,
+            6
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            21,
+            47
+          ],
+          [
+            50,
+            119
+          ]
+        ],
+        "absent_ranges_inclusive": [
+          [
+            7,
+            7
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            48,
+            49
+          ]
+        ]
+      }
+    }
+  },
+  "stage_comparison": {
+    "left": {
+      "final_valid_without_camera_stage": {
+        "frames": 120,
+        "present_frames": 58,
+        "fraction": 0.48333333333333334,
+        "present_ranges_inclusive": [
+          [
+            0,
+            57
+          ]
+        ],
+        "absent_ranges_inclusive": [
+          [
+            58,
+            119
+          ]
+        ]
+      },
+      "camera_stage_but_final_invalid": {
+        "frames": 120,
+        "present_frames": 0,
+        "fraction": 0.0,
+        "present_ranges_inclusive": [],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            119
+          ]
+        ]
+      }
+    },
+    "right": {
+      "final_valid_without_camera_stage": {
+        "frames": 120,
+        "present_frames": 14,
+        "fraction": 0.11666666666666667,
+        "present_ranges_inclusive": [
+          [
+            7,
+            7
+          ],
+          [
+            10,
+            20
+          ],
+          [
+            48,
+            49
+          ]
+        ],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            6
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            21,
+            47
+          ],
+          [
+            50,
+            119
+          ]
+        ]
+      },
+      "camera_stage_but_final_invalid": {
+        "frames": 120,
+        "present_frames": 0,
+        "fraction": 0.0,
+        "present_ranges_inclusive": [],
+        "absent_ranges_inclusive": [
+          [
+            0,
+            119
+          ]
+        ]
+      }
+    }
+  },
+  "model_masks": {
+    "available": true,
+    "path": "example/segment_018/tracks_0_120/model_masks.npy",
+    "shape": [
+      120,
+      1080,
+      1920
+    ],
+    "dtype": "bool",
+    "definition": "nonzero rendered union-mask pixels / (image height * image width), per frame",
+    "area_fraction": {
+      "count": 120,
+      "min": 0.0,
+      "median": 0.05912157600308642,
+      "mean": 0.04788638519161523,
+      "p95": 0.07489923321759259,
+      "max": 0.10863956404320987
+    }
+  },
+  "slam": {
+    "available": true,
+    "path": "example/segment_018/SLAM/hawor_slam_w_scale_0_120.npz",
+    "arrays": {
+      "tstamp": {
+        "shape": [
+          21
+        ],
+        "dtype": "int32",
+        "elements": 21,
+        "finite": 21,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 21,
+          "min": 0.0,
+          "median": 25.0,
+          "mean": 31.571428571428573,
+          "p95": 61.0,
+          "max": 94.0
+        }
+      },
+      "disps": {
+        "shape": [
+          21,
+          328,
+          584
+        ],
+        "dtype": "float32",
+        "elements": 4022592,
+        "finite": 4022592,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 4022592,
+          "min": 4.6038753680477384e-06,
+          "median": 0.9996251463890076,
+          "mean": 0.9955377718778994,
+          "p95": 1.218243938684463,
+          "max": 2.6483731269836426
+        }
+      },
+      "traj": {
+        "shape": [
+          120,
+          7
+        ],
+        "dtype": "float32",
+        "elements": 840,
+        "finite": 840,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 840,
+          "min": -1.9832632541656494,
+          "median": -0.0030105365440249443,
+          "mean": 0.005059241488738951,
+          "p95": 0.9951885730028153,
+          "max": 0.9999999403953552
+        }
+      },
+      "img_focal": {
+        "shape": [],
+        "dtype": "float64",
+        "elements": 1,
+        "finite": 1,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 1,
+          "min": 600.0,
+          "median": 600.0,
+          "mean": 600.0,
+          "p95": 600.0,
+          "max": 600.0
+        }
+      },
+      "img_center": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "elements": 2,
+        "finite": 2,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 2,
+          "min": 540.0,
+          "median": 750.0,
+          "mean": 750.0,
+          "p95": 939.0,
+          "max": 960.0
+        }
+      },
+      "scale": {
+        "shape": [],
+        "dtype": "float64",
+        "elements": 1,
+        "finite": 1,
+        "nonfinite": 0,
+        "finite_fraction": 1.0,
+        "finite_value_summary": {
+          "count": 1,
+          "min": 0.3346502482891083,
+          "median": 0.3346502482891083,
+          "mean": 0.3346502482891083,
+          "p95": 0.3346502482891083,
+          "max": 0.3346502482891083
+        }
+      }
+    },
+    "coordinate_definition": "traj[:, :3] * scale (same camera-to-world translation used by load_slam_cam)",
+    "units": "stored units; physical scale not independently validated",
+    "quaternion_norm": {
+      "count": 120,
+      "min": 0.9999999403953552,
+      "median": 1.0,
+      "mean": 1.0,
+      "p95": 1.0,
+      "max": 1.0000001192092896
+    },
+    "scaled_camera_translation": {
+      "shape": [
+        120,
+        3
+      ],
+      "dtype": "float64",
+      "elements": 360,
+      "finite": 360,
+      "nonfinite": 0,
+      "finite_fraction": 1.0,
+      "finite_value_summary": {
+        "count": 360,
+        "min": -0.6636995404291994,
+        "median": -0.07333504618425546,
+        "mean": -0.10052437789790962,
+        "p95": 0.04824313349584906,
+        "max": 0.05140179188430949
+      }
+    },
+    "adjacent_displacement": {
+      "count": 119,
+      "min": 0.0002281713966921549,
+      "median": 0.003754528232581297,
+      "mean": 0.013313789357603798,
+      "p95": 0.05922931189570955,
+      "max": 0.07347527664791653
+    }
+  },
+  "world_translation": {
+    "left": {
+      "usable_translation_frames": 120,
+      "axis_min": [
+        -0.052428752183914185,
+        0.23437973856925964,
+        0.19882386922836304
+      ],
+      "axis_max": [
+        0.03757484257221222,
+        0.30101048946380615,
+        0.3779469430446625
+      ],
+      "axis_range": [
+        0.0900035947561264,
+        0.06663075089454651,
+        0.17912307381629944
+      ],
+      "adjacent_displacement": {
+        "count": 119,
+        "min": 0.0007335837433280288,
+        "median": 0.009476360423600203,
+        "mean": 0.012572094327670313,
+        "p95": 0.03343695341394991,
+        "max": 0.07168285298223523
+      },
+      "sum_adjacent_displacement": 1.496079224992767,
+      "zero_translation_valid_frames": []
+    },
+    "right": {
+      "usable_translation_frames": 120,
+      "axis_min": [
+        -0.1166563481092453,
+        -0.8207288384437561,
+        0.04806002974510193
+      ],
+      "axis_max": [
+        0.09552904963493347,
+        0.2048400640487671,
+        0.2856593430042267
+      ],
+      "axis_range": [
+        0.21218539774417877,
+        1.025568962097168,
+        0.23759931325912476
+      ],
+      "adjacent_displacement": {
+        "count": 119,
+        "min": 0.0007723720130725188,
+        "median": 0.015285386800667333,
+        "mean": 0.027774575906264403,
+        "p95": 0.08571566567706891,
+        "max": 0.24879567952754464
+      },
+      "sum_adjacent_displacement": 3.3051745328454634,
+      "zero_translation_valid_frames": []
+    }
+  },
+  "camera_translation": {
+    "left": {
+      "usable_translation_frames": 62,
+      "axis_min": [
+        0.0015666373074054718,
+        0.1907452791929245,
+        0.20971593260765076
+      ],
+      "axis_max": [
+        0.09528660029172897,
+        0.26280567049980164,
+        0.37473809719085693
+      ],
+      "axis_range": [
+        0.0937199629843235,
+        0.07206039130687714,
+        0.16502216458320618
+      ],
+      "adjacent_displacement": {
+        "count": 61,
+        "min": 0.0017881350380355508,
+        "median": 0.014450324154365415,
+        "mean": 0.01700155239689506,
+        "p95": 0.038668230244294055,
+        "max": 0.06965175747676441
+      },
+      "sum_adjacent_displacement": 1.037094696210599,
+      "zero_translation_valid_frames": []
+    },
+    "right": {
+      "usable_translation_frames": 106,
+      "axis_min": [
+        -0.10890483111143112,
+        -0.15649619698524475,
+        0.09069176018238068
+      ],
+      "axis_max": [
+        0.2120727002620697,
+        0.3295225501060486,
+        0.28043225407600403
+      ],
+      "axis_range": [
+        0.3209775313735008,
+        0.48601874709129333,
+        0.18974049389362335
+      ],
+      "adjacent_displacement": {
+        "count": 102,
+        "min": 0.0006485027323002174,
+        "median": 0.012018844004859464,
+        "mean": 0.01912178328445882,
+        "p95": 0.053377270758869354,
+        "max": 0.22388092427259168
+      },
+      "sum_adjacent_displacement": 1.9504218950147993,
+      "zero_translation_valid_frames": []
+    }
+  },
+  "definitions": {
+    "validity": "Final pred_valid from HaWoR; can be set True by infiller, not detector reliability or correctness",
+    "raw_label_support": "At least one model_tracks entry with det=True and raw det_handedness >0 (right) or ==0 (left), per frame",
+    "track_majority_support": "Assign each track left if mean of its det=True handedness labels <0.5, else right; union det=True frames by assigned side (same rule as HaWoR)",
+    "camera_stage_support": "Frames present in camera-space JSON matched to current frame_chunks_all when available; can include interpolated detection boxes",
+    "final_valid_without_camera_stage": "Final-valid frames absent from camera-stage cache; consistent with infill availability, not ground-truth visibility",
+    "translation": "Stored MANO model translation parameter, not wrist/joint positions; world uses cam2world_convert offset convention",
+    "adjacent_displacement": "L2 norm(trans[t]-trans[t-1]) only if both adjacent frames are final-valid and have finite xyz; no bridging gaps",
+    "sum_adjacent_displacement": "Sum of eligible consecutive-frame displacements; does not bridge gaps; stored units",
+    "axis_bounds": "Min/max/range over usable final-valid finite translation frames; invalid zero placeholders excluded",
+    "array_bounds": "Array numeric summaries include placeholders; finite value min/max are diagnostic, not anatomical limits",
+    "detector_score": "Cached detector score; maximum for a raw side label within a frame; not calibrated confidence",
+    "percentile": "p95 computed by numpy.quantile with default linear interpolation"
+  },
+  "limitations": [
+    "No ground truth or benchmark annotations; no reconstruction accuracy, MPJPE, PVE, reprojection error, identity accuracy, or visibility accuracy is measured.",
+    "Metrics describe one saved prediction; finite tensors and full validity do not establish correctness.",
+    "Translation axes are stored world/camera coordinates. Units, world orientation and physical scale are not independently validated.",
+    "Consecutive-frame displacement is motion magnitude, not velocity or jitter; frame time is not assumed.",
+    "Rendered model-mask area is model-derived and is not segmentation IoU.",
+    "Raw tracks contain only retained detector/tracker records; they are not every pre-filter detector proposal.",
+    "Model weights, MANO assets and raw meshes are not loaded or exported."
+  ],
+  "warnings": [
+    "model_boxes.npy is empty; raw detections reconstructed from model_tracks.npy instead"
+  ],
+  "provenance": {
+    "world_serialization": "joblib list despite .pth suffix",
+    "inputs": [
+      {
+        "path": "example/segment_018/world_space_res.pth",
+        "bytes": 60322,
+        "sha256": "8a062e632adaa9f9cd15944819049b262479f9b2a6b92d816742b076266b86e0"
+      },
+      {
+        "path": "example/segment_018/tracks_0_120/model_tracks.npy",
+        "bytes": 25535,
+        "sha256": "fc104b39963343fee03acc24c8a7a3597395577ceca9f2bdfe73ff3ad2d60952"
+      },
+      {
+        "path": "example/segment_018/tracks_0_120/frame_chunks_all.npy",
+        "bytes": 1859,
+        "sha256": "e6b370612bd57f49e13714f1312a0043be762b319f400ee0ed07f4076baeb4f8"
+      },
+      {
+        "path": "example/segment_018/cam_space/0/58_119.json",
+        "bytes": 313377,
+        "sha256": "61e07c83d3565683f4c49191533884a8b00c641d563d474fee7b62b7f225d179"
+      },
+      {
+        "path": "example/segment_018/cam_space/1/0_6.json",
+        "bytes": 35433,
+        "sha256": "ef0e2761083016892f1da6f4df92f8312b2b118daf665004d909c06649dda5de"
+      },
+      {
+        "path": "example/segment_018/cam_space/1/21_47.json",
+        "bytes": 136407,
+        "sha256": "810dbddfacfcdaeb7263c1725d6e860c60001868b03f1c9695d753d62ee9d6e8"
+      },
+      {
+        "path": "example/segment_018/cam_space/1/50_119.json",
+        "bytes": 353258,
+        "sha256": "ea7251a0bd828cb59ebcac6b8362638694287289e0a8f5f7363a747669f45ced"
+      },
+      {
+        "path": "example/segment_018/cam_space/1/8_9.json",
+        "bytes": 10226,
+        "sha256": "b2bf62968f6c0030c25e7e4478c0ec48ab981912b0a20131cced9a7dfd81331f"
+      },
+      {
+        "path": "example/segment_018/SLAM/hawor_slam_w_scale_0_120.npz",
+        "bytes": 16095336,
+        "sha256": "d3aeaef8d3e107983adde85584c5a3dfb86d057f066045c92567d2f4859f5112"
+      }
+    ],
+    "script": {
+      "path": "scripts/results/diagnostics.py",
+      "bytes": 28635,
+      "sha256": "90c6bf578387caa0b95e49614624d738401e5b804c3f0cfc274dd6bd67c3e55f"
+    },
+    "runtime": {
+      "python": "3.10.22",
+      "torch": "1.13.0+cu117",
+      "numpy": "1.26.4",
+      "matplotlib": "3.7.5",
+      "joblib": "1.4.2"
+    }
+  },
+  "artifacts": [
+    "01_support_and_detection.png",
+    "02_translation_components.png",
+    "03_world_trajectory_and_motion.png",
+    "summary.json",
+    "framewise.json"
+  ]
+}

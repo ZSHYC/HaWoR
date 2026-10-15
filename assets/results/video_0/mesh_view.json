@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "sequence": "example/video_0",
+  "frame_index": 49,
+  "frame_count": 121,
+  "frame_index_definition": "0-based extracted-image index, not source video timestamp",
+  "frame_selection": {
+    "criterion": "both raw detector sides present and both final-valid",
+    "midpoint_frame_index": 60.0,
+    "eligible_frame_count": 82,
+    "tie_break": "earlier frame"
+  },
+  "hands": {
+    "left": {
+      "rendered": true,
+      "vertex_count": 778,
+      "face_count": 1552,
+      "finite_vertices": true,
+      "vertex_axis_min": [
+        -0.010840922594070435,
+        0.2779177129268646,
+        0.20022933185100555
+      ],
+      "vertex_axis_max": [
+        0.06885164976119995,
+        0.39102715253829956,
+        0.33207210898399353
+      ],
+      "raw_detector_label_present": true,
+      "final_valid": true,
+      "camera_stage_support": true,
+      "forward_function": "run_mano_left",
+      "color": "#a855f7"
+    },
+    "right": {
+      "rendered": true,
+      "vertex_count": 778,
+      "face_count": 1552,
+      "finite_vertices": true,
+      "vertex_axis_min": [
+        0.1395571231842041,
+        0.03654653951525688,
+        0.2708675265312195
+      ],
+      "vertex_axis_max": [
+        0.24415019154548645,
+        0.15954476594924927,
+        0.436628520488739
+      ],
+      "raw_detector_label_present": true,
+      "final_valid": true,
+      "camera_stage_support": true,
+      "forward_function": "run_mano",
+      "color": "#3b82f6"
+    }
+  },
+  "geometry_definition": "Actual run_mano_left/run_mano CPU forward of saved final world trans/angle-axis root/hand pose/betas; same left shapedirs fix and wrist-cap faces as repository helper defaults",
+  "coordinate_definition": "Original saved-world MANO vertices from the parametric forward; no demo rotation, recentering, scaling, smoothing or pose changes. Only plot limits/camera view are fitted.",
+  "units": "stored world units; physical scale not independently validated",
+  "axis_order": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "common_axis_limits": [
+    [
+      -0.08185450881719591,
+      0.31516377776861193
+    ],
+    [
+      0.015277702733874299,
+      0.41229598931968214
+    ],
+    [
+      0.11991978287696836,
+      0.5169380694627762
+    ]
+  ],
+  "axis_fit_definition": "Union vertex bounding-box center; all 3 axes half-width 0.56 * largest bounding-box side; equal-axis cube shared by 3 views",
+  "views": [
+    {
+      "elevation_degrees": 20,
+      "azimuth_degrees": -60
+    },
+    {
+      "elevation_degrees": 20,
+      "azimuth_degrees": 60
+    },
+    {
+      "elevation_degrees": 90,
+      "azimuth_degrees": -90
+    }
+  ],
+  "projection": "orthographic",
+  "rendering": "Matplotlib Poly3DCollection, opaque constant side color, thin triangle edges, no shading or lighting; painter-based static display",
+  "limitations": [
+    "No ground truth, no measured reconstruction accuracy or anatomical plausibility evaluation.",
+    "Raw-side detector support does not prove hand identity, visibility, or absence of infill after track-majority reassignment.",
+    "Parametric MANO forward only; this does not rerun learned reconstruction or modify saved inference outputs.",
+    "Matplotlib polygon depth ordering can have occlusion artifacts; geometry is not changed to improve appearance."
+  ],
+  "attribution": null,
+  "cuda_initialized": false,
+  "provenance": {
+    "world_cache": "example/video_0/world_space_res.pth",
+    "world_cache_sha256": "51760e718a5a5afade08ae5938852b4c9ef79c7e717e7d3e8e67e5eca80db9d1",
+    "script_sha256": "87060e065629b1ddf9eed6b61cc7e0e4d8e90a99685613df9d305148889ccc7b",
+    "process_py_sha256": "3a7a6490c4505c9c773715fd48c8206607536304d46f1cfb5a08fc1dc8de9a5c",
+    "torch": "1.13.0+cu117",
+    "numpy": "1.26.4",
+    "matplotlib": "3.7.5"
+  },
+  "exported": [
+    "04_mesh_views.png",
+    "mesh_view.json"
+  ],
+  "not_exported": "Mesh vertices, triangle arrays, saved pose/shape parameters, MANO assets and learned weights"
+}

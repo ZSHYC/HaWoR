@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "sequence": "example/segment_037",
+  "frame_index": 59,
+  "frame_count": 120,
+  "frame_index_definition": "0-based extracted-image index, not source video timestamp",
+  "frame_selection": {
+    "criterion": "both raw detector sides present and both final-valid",
+    "midpoint_frame_index": 59.5,
+    "eligible_frame_count": 95,
+    "tie_break": "earlier frame"
+  },
+  "hands": {
+    "left": {
+      "rendered": true,
+      "vertex_count": 778,
+      "face_count": 1552,
+      "finite_vertices": true,
+      "vertex_axis_min": [
+        -0.2736351490020752,
+        0.17262011766433716,
+        0.17811769247055054
+      ],
+      "vertex_axis_max": [
+        -0.16019749641418457,
+        0.29492616653442383,
+        0.3186631500720978
+      ],
+      "raw_detector_label_present": true,
+      "final_valid": true,
+      "camera_stage_support": true,
+      "forward_function": "run_mano_left",
+      "color": "#a855f7"
+    },
+    "right": {
+      "rendered": true,
+      "vertex_count": 778,
+      "face_count": 1552,
+      "finite_vertices": true,
+      "vertex_axis_min": [
+        0.05132335051894188,
+        -0.1340876817703247,
+        0.21736103296279907
+      ],
+      "vertex_axis_max": [
+        0.19065354764461517,
+        -0.015928559005260468,
+        0.34170037508010864
+      ],
+      "raw_detector_label_present": true,
+      "final_valid": true,
+      "camera_stage_support": true,
+      "forward_function": "run_mano",
+      "color": "#3b82f6"
+    }
+  },
+  "geometry_definition": "Actual run_mano_left/run_mano CPU forward of saved final world trans/angle-axis root/hand pose/betas; same left shapedirs fix and wrist-cap faces as repository helper defaults",
+  "coordinate_definition": "Original saved-world MANO vertices from the parametric forward; no demo rotation, recentering, scaling, smoothing or pose changes. Only plot limits/camera view are fitted.",
+  "units": "stored world units; physical scale not independently validated",
+  "axis_order": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "common_axis_limits": [
+    [
+      -0.30149247080087666,
+      0.21851086944341663
+    ],
+    [
+      -0.17958242774009708,
+      0.3404209125041962
+    ],
+    [
+      -9.263634681705435e-05,
+      0.5199107038974762
+    ]
+  ],
+  "axis_fit_definition": "Union vertex bounding-box center; all 3 axes half-width 0.56 * largest bounding-box side; equal-axis cube shared by 3 views",
+  "views": [
+    {
+      "elevation_degrees": 20,
+      "azimuth_degrees": -60
+    },
+    {
+      "elevation_degrees": 20,
+      "azimuth_degrees": 60
+    },
+    {
+      "elevation_degrees": 90,
+      "azimuth_degrees": -90
+    }
+  ],
+  "projection": "orthographic",
+  "rendering": "Matplotlib Poly3DCollection, opaque constant side color, thin triangle edges, no shading or lighting; painter-based static display",
+  "limitations": [
+    "No ground truth, no measured reconstruction accuracy or anatomical plausibility evaluation.",
+    "Raw-side detector support does not prove hand identity, visibility, or absence of infill after track-majority reassignment.",
+    "Parametric MANO forward only; this does not rerun learned reconstruction or modify saved inference outputs.",
+    "Matplotlib polygon depth ordering can have occlusion artifacts; geometry is not changed to improve appearance."
+  ],
+  "attribution": null,
+  "cuda_initialized": false,
+  "provenance": {
+    "world_cache": "example/segment_037/world_space_res.pth",
+    "world_cache_sha256": "a177758bb57046f2c0c9285f2c917b274ce4f8667cf342fe652b2ec9c9c9ab00",
+    "script_sha256": "87060e065629b1ddf9eed6b61cc7e0e4d8e90a99685613df9d305148889ccc7b",
+    "process_py_sha256": "3a7a6490c4505c9c773715fd48c8206607536304d46f1cfb5a08fc1dc8de9a5c",
+    "torch": "1.13.0+cu117",
+    "numpy": "1.26.4",
+    "matplotlib": "3.7.5"
+  },
+  "exported": [
+    "04_mesh_views.png",
+    "mesh_view.json"
+  ],
+  "not_exported": "Mesh vertices, triangle arrays, saved pose/shape parameters, MANO assets and learned weights"
+}

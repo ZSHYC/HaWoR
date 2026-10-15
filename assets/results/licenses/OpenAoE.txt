@@ -1,0 +1,81 @@
+Open-AoE Dataset License
+Version 1.0 — Last updated: August 2026
+
+Copyright (c) Ant Group / inclusionAI. All rights reserved.
+
+“Agreement” means the terms and conditions for use, reproduction, distribution,
+and modification of the Dataset Materials set forth herein.
+
+“Dataset Materials” means the files distributed in the Hugging Face / ModelScope
+dataset repository `inclusionAI/OpenAoE-2000h`, including but not limited to
+egocentric video (`raw_video.mp4`, undistorted video), calibration metadata
+(`video_info.json`, `undistorted_video_info.json`), atomic-action annotations
+(`ego_action_annotation.json`), camera trajectories, MANO-derived hand
+reconstructions (`hands.npz`), and accompanying visualization assets in each
+sample directory.
+
+“Licensee” or “you” means the individual or legal entity accessing or using
+the Dataset Materials.
+
+By downloading, accessing, or using any portion of the Dataset Materials, you
+agree to be bound by this Agreement.
+
+1. License grant
+
+   You are granted a non-exclusive, worldwide, perpetual, royalty-free license
+   to use, reproduce, distribute, modify, and create derivative works of the
+   Dataset Materials for any purpose — including commercial research, model
+   training, and product development — subject to the attribution requirements
+   in Section 2.
+
+2. Attribution (required)
+
+   Any use, redistribution, or publication of the Dataset Materials or
+   derivative works (including models trained on the data, derived labels,
+   datasets, demos, or products) must clearly attribute the source as
+   **Open-AoE** / **OpenAoE-2000h**, for example:
+
+   - Dataset: `inclusionAI/OpenAoE-2000h` (Hugging Face / ModelScope)
+   - Paper: Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain
+     for Embodied Learning — https://arxiv.org/abs/2607.14183
+
+   You must not imply endorsement, sponsorship, or affiliation with the
+   Licensor unless separately agreed in writing.
+
+3. Redistribution
+
+   If you redistribute Dataset Materials or substantial portions thereof, you
+   must include a copy of this license and preserve attribution notices.
+
+4. Third-party components
+
+   MANO-derived files (`hands.npz`, `camera_traj.npz`, and related
+   visualizations) are additionally subject to the MANO license
+   (https://mano.is.tue.mpg.de/license.html). You may use video and
+   atomic-action annotations without loading MANO-derived files.
+
+5. Restrictions
+
+   You must comply with applicable laws and regulations. You must not use the
+   Dataset Materials for unlawful purposes or in ways that violate third-party
+   rights, including privacy rights of data contributors.
+
+6. Disclaimer
+
+   THE DATASET MATERIALS ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED. THE LICENSOR DISCLAIMS ALL WARRANTIES INCLUDING
+   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+7. Limitation of liability
+
+   IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+   INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR
+   USE OF THE DATASET MATERIALS.
+
+8. Relationship to source code
+
+   Source code in the GitHub repository `ant-research/Open-AoE` is licensed
+   separately (Apache License 2.0). That license does not apply to the Dataset
+   Materials in this repository.
+
+Questions: https://github.com/ant-research/Open-AoE

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "sequence": "external_inputs/openaoe_pouch",
+  "frame_index": 89,
+  "frame_count": 180,
+  "frame_index_definition": "0-based extracted-image index, not source video timestamp",
+  "frame_selection": {
+    "criterion": "both raw detector sides present and both final-valid",
+    "midpoint_frame_index": 89.5,
+    "eligible_frame_count": 180,
+    "tie_break": "earlier frame"
+  },
+  "hands": {
+    "left": {
+      "rendered": true,
+      "vertex_count": 778,
+      "face_count": 1552,
+      "finite_vertices": true,
+      "vertex_axis_min": [
+        -0.010314121842384338,
+        -0.1510339081287384,
+        0.16935914754867554
+      ],
+      "vertex_axis_max": [
+        0.16323290765285492,
+        -0.00428985059261322,
+        0.29946020245552063
+      ],
+      "raw_detector_label_present": true,
+      "final_valid": true,
+      "camera_stage_support": true,
+      "forward_function": "run_mano_left",
+      "color": "#a855f7"
+    },
+    "right": {
+      "rendered": true,
+      "vertex_count": 778,
+      "face_count": 1552,
+      "finite_vertices": true,
+      "vertex_axis_min": [
+        0.13110637664794922,
+        -0.09612132608890533,
+        0.12485331296920776
+      ],
+      "vertex_axis_max": [
+        0.2876432538032532,
+        0.053702086210250854,
+        0.23669640719890594
+      ],
+      "raw_detector_label_present": true,
+      "final_valid": true,
+      "camera_stage_support": true,
+      "forward_function": "run_mano",
+      "color": "#3b82f6"
+    }
+  },
+  "geometry_definition": "Actual run_mano_left/run_mano CPU forward of saved final world trans/angle-axis root/hand pose/betas; same left shapedirs fix and wrist-cap faces as repository helper defaults",
+  "coordinate_definition": "Original saved-world MANO vertices from the parametric forward; no demo rotation, recentering, scaling, smoothing or pose changes. Only plot limits/camera view are fitted.",
+  "units": "stored world units; physical scale not independently validated",
+  "axis_order": [
+    "X",
+    "Y",
+    "Z"
+  ],
+  "common_axis_limits": [
+    [
+      -0.028191564381122608,
+      0.3055206963419914
+    ],
+    [
+      -0.2155220413208008,
+      0.11819021940231325
+    ],
+    [
+      0.04530062735080717,
+      0.3790128880739212
+    ]
+  ],
+  "axis_fit_definition": "Union vertex bounding-box center; all 3 axes half-width 0.56 * largest bounding-box side; equal-axis cube shared by 3 views",
+  "views": [
+    {
+      "elevation_degrees": 20,
+      "azimuth_degrees": -60
+    },
+    {
+      "elevation_degrees": 20,
+      "azimuth_degrees": 60
+    },
+    {
+      "elevation_degrees": 90,
+      "azimuth_degrees": -90
+    }
+  ],
+  "projection": "orthographic",
+  "rendering": "Matplotlib Poly3DCollection, opaque constant side color, thin triangle edges, no shading or lighting; painter-based static display",
+  "limitations": [
+    "No ground truth, no measured reconstruction accuracy or anatomical plausibility evaluation.",
+    "Raw-side detector support does not prove hand identity, visibility, or absence of infill after track-majority reassignment.",
+    "Parametric MANO forward only; this does not rerun learned reconstruction or modify saved inference outputs.",
+    "Matplotlib polygon depth ordering can have occlusion artifacts; geometry is not changed to improve appearance."
+  ],
+  "attribution": "Input: Open-AoE / inclusionAI",
+  "cuda_initialized": false,
+  "provenance": {
+    "world_cache": "external_inputs/openaoe_pouch/world_space_res.pth",
+    "world_cache_sha256": "1e046b5e253473ed1d4602d2fda5f29c5e1e82758de2ecd2f1bcf24613941c09",
+    "script_sha256": "87060e065629b1ddf9eed6b61cc7e0e4d8e90a99685613df9d305148889ccc7b",
+    "process_py_sha256": "3a7a6490c4505c9c773715fd48c8206607536304d46f1cfb5a08fc1dc8de9a5c",
+    "torch": "1.13.0+cu117",
+    "numpy": "1.26.4",
+    "matplotlib": "3.7.5"
+  },
+  "exported": [
+    "04_mesh_views.png",
+    "mesh_view.json"
+  ],
+  "not_exported": "Mesh vertices, triangle arrays, saved pose/shape parameters, MANO assets and learned weights"
+}
