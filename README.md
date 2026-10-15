@@ -1,159 +1,93 @@
-<div align="center">
+# HaWoR 复现：Conda 环境与服务器离屏渲染
 
-# HaWoR: World-Space Hand Motion Reconstruction from Egocentric Videos
+基于 [ThunderVVV/HaWoR](https://github.com/ThunderVVV/HaWoR) 的复现 fork。HaWoR 从第一视角视频重建世界坐标系中的手部运动，原论文为 **HaWoR: World-Space Hand Motion Reconstruction from Egocentric Videos**（CVPR 2025 Highlight）。
 
-[Jinglei Zhang]()<sup>1</sup> &emsp; [Jiankang Deng](https://jiankangdeng.github.io/)<sup>2</sup> &emsp; [Chao Ma](https://scholar.google.com/citations?user=syoPhv8AAAAJ&hl=en)<sup>1</sup> &emsp; [Rolandos Alexandros Potamias](https://rolpotamias.github.io)<sup>2</sup> &emsp;  
+本仓库补充固定版本的 Conda/Python 环境、Linux EGL 离屏渲染及复现文档。模型和推理算法沿用上游；这不是作者的官方发布仓库。上游基线：[`66c7d410`](https://github.com/ThunderVVV/HaWoR/tree/66c7d4108d58a716deccd192cb7645170cdc7bd7)。
 
-<sup>1</sup>Shanghai Jiao Tong University, China
-<sup>2</sup>Imperial College London, UK <br>
+[论文](https://arxiv.org/abs/2501.02973) · [项目主页](https://hawor-project.github.io/) · [上游原始说明](docs/UPSTREAM.md)
 
-<font color="blue"><strong>CVPR 2025 Highlight✨</strong></font> 
+![HaWoR overview](assets/teaser.png)
 
-<a href='https://arxiv.org/abs/2501.02973'><img src='https://img.shields.io/badge/Arxiv-2501.02973-A42C25?style=flat&logo=arXiv&logoColor=A42C25'></a> 
-<a href='https://arxiv.org/pdf/2501.02973'><img src='https://img.shields.io/badge/Paper-PDF-yellow?style=flat&logo=arXiv&logoColor=yellow'></a> 
-<a href='https://hawor-project.github.io/'><img src='https://img.shields.io/badge/Project-Page-%23df5b46?style=flat&logo=Google%20chrome&logoColor=%23df5b46'></a> 
-<a href='https://github.com/ThunderVVV/HaWoR'><img src='https://img.shields.io/badge/GitHub-Code-black?style=flat&logo=github&logoColor=white'></a> 
-<a href='https://huggingface.co/spaces/ThunderVVV/HaWoR'><img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Demo-green'></a>
-</div>
+## 复现内容
 
-This is the official implementation of **[HaWoR](https://hawor-project.github.io/)**, a hand reconstruction model in the world coordinates:
+- 固定 Python、PyTorch、CUDA 及关键依赖版本，保留完整环境快照。
+- `demo.py --headless` 支持通过 SSH 导出 world / cam 两种 MP4，无需桌面窗口。
+- 分开保存两种视角的结果，支持覆盖导出并释放离屏渲染资源。
+- 提供不依赖 MANO 和权重的渲染检查，以及公开权重校验值。
 
-![teaser](assets/teaser.png)
+已在 **Ubuntu 22.04 / NVIDIA A800 80 GB / Python 3.10 / PyTorch 1.13.0+cu117 / CUDA 11.7** 上跑通官方 `example/video_0.mp4`。其他系统、显卡与版本组合需要另行验证。
 
-## Installation
- 
-### Installation
-```
-git clone --recursive https://github.com/ThunderVVV/HaWoR.git
+## 开始使用
+
+```bash
+git clone --recursive https://github.com/ZSHYC/HaWoR.git
 cd HaWoR
 ```
 
-The code has been tested with PyTorch 1.13 and CUDA 11.7. Higher torch and cuda versions should be also compatible. It is suggested to use an anaconda environment to install the the required dependencies:
-```bash
-conda create --name hawor python=3.10
-conda activate hawor
-
-pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
-# Install requirements
-pip install -r requirements.txt
-pip install pytorch-lightning==2.2.4 --no-deps
-pip install lightning-utilities torchmetrics==1.4.0
-```
-
-### Install masked DROID-SLAM:
-
-```
-cd thirdparty/DROID-SLAM
-python setup.py install
-```
-
-Download DROID-SLAM official weights [droid.pth](https://drive.google.com/file/d/1PpqVt1H4maBa_GbPJp4NwxRsd9jk-elh/view?usp=sharing), put it under `./weights/external/`.
-
-### Install Metric3D
-
-Download Metric3D official weights [metric_depth_vit_large_800k.pth](https://drive.google.com/file/d/1eT2gG-kwsVzNy5nJrbm4KC-9DbNKyLnr/view?usp=drive_link), put it under `thirdparty/Metric3D/weights`.
-
-### Download the model weights
+1. 按 [安装指南](docs/INSTALL.md) 创建 Conda 环境、安装依赖并编译 CUDA 扩展。
+2. 按 [模型准备](docs/MODELS.md) 下载公开权重，自行取得并放置 MANO 模型。
+3. 激活环境，在仓库根目录运行示例：
 
 ```bash
-wget https://huggingface.co/spaces/rolpotamias/WiLoR/resolve/main/pretrained_models/detector.pt -P ./weights/external/
-wget https://huggingface.co/ThunderVVV/HaWoR/resolve/main/hawor/checkpoints/hawor.ckpt -P ./weights/hawor/checkpoints/
-wget https://huggingface.co/ThunderVVV/HaWoR/resolve/main/hawor/checkpoints/infiller.pt -P ./weights/hawor/checkpoints/
-wget https://huggingface.co/ThunderVVV/HaWoR/resolve/main/hawor/model_config.yaml -P ./weights/hawor/
-```
-It is also required to download MANO model from [MANO website](https://mano.is.tue.mpg.de). 
-Create an account by clicking Sign Up and download the models (mano_v*_*.zip). Unzip and put the hand model to the `_DATA/data/mano/MANO_RIGHT.pkl` and `_DATA/data_left/mano_left/MANO_LEFT.pkl`. 
+source scripts/server/activate.sh
 
-Note that MANO model falls under the [MANO license](https://mano.is.tue.mpg.de/license.html).
-## Demo
+# 按可用资源选择 GPU 编号。
+CUDA_VISIBLE_DEVICES=0 python demo.py \
+  --video_path ./example/video_0.mp4 --vis_mode world --headless
 
-For visualizaiton in world view, run with:
-```bash
-python demo.py --video_path ./example/video_0.mp4  --vis_mode world
+CUDA_VISIBLE_DEVICES=0 python demo.py \
+  --video_path ./example/video_0.mp4 --vis_mode cam --headless
 ```
 
-For visualizaiton in camera view, run with:
-```bash
-python demo.py --video_path ./example/video_0.mp4 --vis_mode cam
+该示例的导出路径为：
+
+```text
+example/video_0/vis_world_0_120/aitviewer/video.mp4
+example/video_0/vis_cam_0_120/aitviewer/video.mp4
 ```
 
-## Training
-The training code will be released soon. 
+未指定 `--headless` 时保留上游交互式窗口。输入视频旁的同名目录保存抽帧、跟踪、SLAM 与推理缓存；重复运行会复用缓存。替换视频内容或模型后，需要使用新视频路径或先备份并移走旧缓存。
 
-## Evaluation on HOT3D
+## 验证与文档
 
-### Download HOT3D
+| 文档 / 命令 | 用途 |
+| --- | --- |
+| [安装指南](docs/INSTALL.md) | Conda、CUDA 扩展、EGL 与常见环境问题 |
+| [模型准备](docs/MODELS.md) | 下载来源、目录结构、SHA-256 与 MANO |
+| [验证记录](docs/VALIDATION.md) | 已测试的范围、结果及已知限制 |
+| [上游说明](docs/UPSTREAM.md) | 原始项目介绍、HOT3D / DexYCB 评测入口 |
+| `python scripts/server/check_headless.py` | 无需 MANO / 权重，检查 world 与 cam 视频实际渲染和解码 |
 
-Get `Hot3DAria_download_urls.json` and `Hot3DAssets_download_urls.json` from [hot3d website](https://www.projectaria.com/datasets/hot3D/) and put them under `hot3d/data_downloader/`.
+## 仓库结构
 
-Download a copy of MANO offical website model(`mano_v1_2.zip`) and put them to `hot3d/mano_v1_2`
-
-```
-cd hot3d/data_downloader
-python3 dataset_downloader_base_main.py -c Hot3DAssets_download_urls.json -o ../dataset --sequence_name all
-python3 dataset_downloader_base_main.py -c Hot3DAria_download_urls.json -o ../dataset --data_types all --sequence_name P0001_a68492d5 P0001_9b6feab7 P0014_8254f925 P0011_76ea6d47 P0014_84ea2dcc P0001_8d136980 P0012_476bae57 P0012_130a66e1 P0014_24cb3bf0 P0010_1c9fe708 P0002_2ea9af5b P0011_11475e24 P0010_0ecbf39f P0010_160e551c P0015_42b8b389 P0012_915e71c6 P0002_65085bfc P0011_47878e48 P0011_cee8fe4f P0002_016222d1 P0012_d85e10f6 P0012_119de519 P0010_41c4c626 P0012_f7e3880b P0009_02511c2f P0011_72efb935 P0010_924e574e 
-```
-
-*: Downloading and processing code under `hot3d/` is adapted from [Official HOT3D Toolkit](https://github.com/facebookresearch/hot3d).
-
-### Extract HOT3D GT
-```
-mkdir datasets
-cd hot3d
-python export_gt.py
-mv hot3d_dataset_export ../datasets/hot3d_valset_export
-```
-
-### Preprocess
-```
-python lib/datasets/hot3d_dataset_preprocess.py --video_root datasets/hot3d_valset_export --set_file val.json --for_eval
+```text
+demo.py                    官方视频推理入口，新增 --headless
+environment.yml            Conda 环境定义
+requirements.txt           固定关键 Python 依赖
+environment/               Linux Conda 与 Python 完整版本快照
+docs/                      安装、模型和验证文档
+scripts/server/            环境激活与离屏渲染检查
+lib/、hawor/、infiller/     上游模型、推理、运动补全和渲染代码
+thirdparty/                DROID-SLAM、Metric3D 及其依赖
+hot3d/、scripts/scripts_eval/  上游数据处理与评测代码
+example/                   上游示例视频
 ```
 
-### Eval
+权重、MANO、数据集、环境、缓存和生成视频不纳入 Git。完整训练和数据集评测未在本次复现中验证；相关上游代码与说明仍予保留。
 
-Run hand motion estimation:
+## 来源、许可与引用
 
-```
-python scripts/scripts_eval/eval_hawor_hot3d.py --inference_stage --gen_hand_mask
-```
+原作者：Jinglei Zhang、Jiankang Deng、Chao Ma、Rolandos Alexandros Potamias。上游及第三方版权、署名和许可均保留。本 fork 的改动为环境配置、文档及离屏导出适配。
 
-Then run SLAM stage:
+上游声明 HaWoR 模型使用 [CC BY-NC-ND 4.0](license.txt)；MANO 须单独遵守 [MANO 许可](https://mano.is.tue.mpg.de/license.html)。模型文件不随本仓库分发。第三方组件适用各自目录内的许可。
 
-```
-python scripts/scripts_eval/test_mdslam_hot3d.py
-
-```
-
-Evaluation:
-
-```
-python scripts/scripts_eval/eval_hawor_hot3d.py --eval_stage
-```
-
-## Evaluation on DexYCB
-
-DexYCB evaluation code (not cleaned) is available at https://github.com/ThunderVVV/dex-ycb-toolkit .
-
-
-## Acknowledgements
-Parts of the code are taken or adapted from the following repos:
-- [HaMeR](https://github.com/geopavlakos/hamer/)
-- [WiLoR](https://github.com/rolpotamias/WiLoR)
-- [SLAHMR](https://github.com/vye16/slahmr)
-- [TRAM](https://github.com/yufu-wang/tram)
-- [CMIB](https://github.com/jihoonerd/Conditional-Motion-In-Betweening)
-
-
-## License 
-HaWoR models fall under the [CC-BY-NC--ND License](./license.txt). This repository depends also on [MANO Model](https://mano.is.tue.mpg.de/license.html), which are fall under their own licenses. By using this repository, you must also comply with the terms of these external licenses.
-## Citing
-If you find HaWoR useful for your research, please consider citing our paper:
+感谢上游及其使用的 [HaMeR](https://github.com/geopavlakos/hamer/)、[WiLoR](https://github.com/rolpotamias/WiLoR)、[SLAHMR](https://github.com/vye16/slahmr)、[TRAM](https://github.com/yufu-wang/tram)、[CMIB](https://github.com/jihoonerd/Conditional-Motion-In-Betweening)。
 
 ```bibtex
 @article{zhang2025hawor,
-      title={HaWoR: World-Space Hand Motion Reconstruction from Egocentric Videos},
-      author={Zhang, Jinglei and Deng, Jiankang and Ma, Chao and Potamias, Rolandos Alexandros},
-      journal={arXiv preprint arXiv:2501.02973},
-      year={2025}
-    }
+  title={HaWoR: World-Space Hand Motion Reconstruction from Egocentric Videos},
+  author={Zhang, Jinglei and Deng, Jiankang and Ma, Chao and Potamias, Rolandos Alexandros},
+  journal={arXiv preprint arXiv:2501.02973},
+  year={2025}
+}
 ```

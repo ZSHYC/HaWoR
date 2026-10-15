@@ -1,8 +1,12 @@
 import os
 import os.path as op
 import re
+import sys
+from unittest.mock import patch
 from abc import abstractmethod
 
+import glcontext
+import imgui
 import matplotlib.cm as cm
 import numpy as np
 from aitviewer.headless import HeadlessRenderer
@@ -87,7 +91,13 @@ class ARCTICViewer:
         size=(2024, 2024),
     ):
         if not interactive:
-            v = HeadlessRenderer()
+            if sys.platform.startswith("linux"):
+                # aitviewer 1.13 does not forward a context backend to its window.
+                # Select EGL only during construction, then restore the default.
+                with patch.object(glcontext, "default_backend", lambda: glcontext.get_backend_by_name("egl")):
+                    v = HeadlessRenderer(size=size)
+            else:
+                v = HeadlessRenderer(size=size)
         else:
             v = Viewer(size=size)
 
@@ -107,8 +117,11 @@ class ARCTICViewer:
         logger.info("Rendering to video")
         if "video" in self.render_types:
             vid_p = op.join(out_folder, "video.mp4")
-            v.save_video(video_dir=vid_p)
-            return 
+            v.save_video(
+                video_dir=vid_p, output_fps=30,
+                animation_range=[0, num_iter - 1], ensure_no_overwrite=False,
+            )
+            return vid_p
 
         pbar = tqdm(range(num_iter))
         for fidx in pbar:
@@ -142,14 +155,22 @@ class ARCTICViewer:
 
     def render_seq(self, batch, out_folder="./render_out", floor_y=0):
         meshes_all, data = batch
-        self.setup_viewer(data, floor_y)
-        for mesh in meshes_all.values():
-            self.v.scene.add(mesh)
-        if self.interactive:
-            self.view_interactive()
-        else:
-            num_iter = data["num_frames"]
-            self.view_fn_headless(num_iter, out_folder)
+        try:
+            self.setup_viewer(data, floor_y)
+            for mesh in meshes_all.values():
+                self.v.scene.add(mesh)
+            if self.interactive:
+                self.view_interactive()
+            else:
+                num_iter = data["num_frames"]
+                return self.view_fn_headless(num_iter, out_folder)
+        finally:
+            if not self.interactive:
+                # Match Viewer.run's cleanup for exports, including failures.
+                self.v.on_close()
+                imgui.destroy_context(self.v.imgui_ctx)
+                self.v.window.close()
+                self.v.window.destroy()
 
     def setup_viewer(self, data, floor_y):
         v = self.v

@@ -1,0 +1,20 @@
+name: hawor
+channels:
+  - nvidia/label/cuda-11.7.1
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip=24.3
+  - setuptools=69.5
+  - wheel
+  - cmake
+  - ninja
+  - ffmpeg
+  - cuda-nvcc=11.7.99
+  - cuda-cudart=11.7.99
+  - cuda-cudart-dev=11.7.99
+  - cuda-cccl=11.7
+  - cuda-driver-dev=11.7.99
+  - libcublas-dev=11.10.3.66
+  - libcusolver-dev=11.4.0.1
+  - libcusparse-dev=11.7.4.91
